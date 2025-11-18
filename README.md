@@ -1,5 +1,10 @@
 # vcf_config_consume_recording_script
 
+## Lab 3 vSphere Supervisor Activation
+as a Day-2 Operations
+
+
+
 tar xvf ~/Downloads/vcf-cli.tar.gz
 sudo mv ~/Downloads/vcf-cli-linux_amd64 /usr/local/bin/vcf
 
