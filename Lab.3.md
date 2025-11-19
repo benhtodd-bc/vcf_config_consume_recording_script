@@ -1,3 +1,6 @@
+Lab Walkthrough vSphere Kubernetes Service: Configure and Consume
+
+
 
 # Lab 3 vSphere Supervisor Activation as a Day-2 Operations
 
@@ -6,9 +9,15 @@
 
 1. Open Browser **Workload Domain > vSphere Client (sa-wld01-vc01).**
 
-**Username:**  ```administrator@vsphere.local```
+* Login: 
+    * **Username:**  ```administrator@vsphere.local```
+    * **Password:** ```VMware123!VMware123!```
+* Open **Inventory**
+    * Highlight **sa-wld01-vc01.vcf.sddc.local**
+    * Click **Configure** tab
+    * Click **vSphere Zones** 
+    * Click 
 
-**Password:** ```VMware123!VMware123!```
 
 # Task 2: Create VM Storage Policy
 
