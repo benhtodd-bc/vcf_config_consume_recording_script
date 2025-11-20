@@ -88,26 +88,35 @@ The ```Add Nodepool``` wizard opens.
 
 ### Task 2: Monitor the VKS Deployment in vCenter
 1. Open a new tab in Google Chrome.
-a. From the bookmarks toolbar, select Workload Domain>vSphere Client (sa-wld01-
-vc01).
-b. Log in to the vSphere Client:
- User name: administrator@vsphere.local
- Password: VMware123!VMware123!
-2. Expand sa-wld01-vc01.vcf.sddc.local > sa-wld01-DC > sa-wld01-cl01.
-3. Expand Namespaces.
-4. Expand learning-project-ns1-XXXXX.
-XXXXX is a system-generated alphanumeric value.
+    
+    a. From the bookmarks toolbar, select Workload Domain>vSphere Client (sa-wld01-vc01)
+    
+    b. Log in to the vSphere Client:
+        
+    * **User name:** ```administrator@vsphere.local```
 
+    * **Password:** ```VMware123!VMware123!```
 
+2. Expand ```sa-wld01-vc01.vcf.sddc.local > sa-wld01-DC > sa-wld01-cl01```.
 
-5. Expand vks-cluster-1.
-6. Monitor Recenter Tasks to verify the vks-cluster-1 tasks.
+3. Expand ```Namespaces```.
+
+4. Expand ```learning-project-ns1-XXXXX```.
+
+    **XXXXX is a system-generated alphanumeric value.**
+
+5. Expand ``vks-cluster-1.``
+
+6. Monitor Recenter Tasks to verify the ```vks-cluster-1``` tasks.
 The VKS Cluster creation typically takes about 60 to 70 mins for the deployment to
 complete.
+
 7. In Google Chrome, click the VCF Automation Organization Portal.
+
 8. Monitor the vks-cluster-1 status.
 The node status changes from Not Ready to Provisioned and finally to the Ready status.
-Task 3: Verify the VKS Cluster Configuration
+
+### Task 3: Verify the VKS Cluster Configuration
 In this lab you verify the vks-cluster-1 configuration.
 1. Click vks-cluster-1.
 2. Click DOWNLOAD KUBECONFIG FILE.
