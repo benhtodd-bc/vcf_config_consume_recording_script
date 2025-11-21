@@ -14,35 +14,51 @@ Use the VM Service to deploy a VM:
 You create a content library for storing VM Service templates.
 
 1. Log in to the vSphere Client.
-   a. In Google Chrome, click Workload Domain >vSphere Client (sa-wld01-vc01) on the
-   bookmarks bar to open the vSphere Client.
+   
+   a. In Google Chrome, click ```Workload Domain > vSphere Client (sa-wld01-vc01)``` on the bookmarks bar to open the vSphere Client.
+   
    b. Log in the vSphere Client.
-    User name: administrator@vsphere.local
-    Password: VMware1!
-2. In the vSphere Client, select Content Libraries from the main menu in the top-left corner.
-3. Click CREATE.
-   The New Content Library wizard opens.
-4. On the Name and location page, enter cl_vm in the Name text box and click NEXT.
-5. On the Configure content library page, verify that Local content library is selected and
-   click NEXT.
+   
+   * **User name:** ```administrator@vsphere.local```
+   
+   * **Password:** ```VMware1!```
 
-6. On the Apply security policy page, leave the options unchanged and click NEXT.
-7. On the Add storage page, select sa-wld01-cl01-vsan01 and click NEXT.
-8. Review the configuration and click FINISH.
+2. In the vSphere Client, select ```Content Libraries``` from the main menu in the top-left corner.
+
+3. Click ```CREATE```.
+   The New Content Library wizard opens.
+
+4. On the Name and location page, enter ```cl_vm``` in the Name text box and click NEXT.
+
+5. On the Configure content library page, verify that Local content library is selected and click ```NEXT```.
+
+6. On the ```Apply security policy``` page, leave the options **UNCHANGED** and click ```NEXT```.
+
+7. On the ```Add storage``` page, select ```sa-wld01-cl01-vsan01``` and click ```NEXT```.
+
+8. Review the configuration and click ```FINISH```.
 
 ### Task 2: Upload a VM Template to the Content Library
 
 You upload a template image to the content library.
 
-1. On the Content Libraries page, click cl_vm.
-2. Next to cl_vm at the top of the page, click ACTIONS.
-3. From the drop-down menu, select Import item.
-4. Next to Source file, click Local File.
-5. Click UPLOAD FILES.
-6. Select Downloads in the navigation pane on the left.
-7. Select ubuntu-24.04-server.ova in the right pane and click Open.
-8. Click IMPORT.
-   This process takes several minutes. It must finish before you can continue. You can
+1. On the ```Content Libraries``` page, click ```cl_vm```.
+
+2. Next to ```cl_vm``` at the top of the page, click ```ACTIONS```.
+
+3. From the drop-down menu, select ```Import item```.
+
+4. Next to Source file, click ```Local File```.
+
+5. Click ```UPLOAD FILES```.
+
+6. Select ```Downloads``` in the navigation pane on the left.
+
+7. Select ```ubuntu-24.04-server.ova``` in the right pane and click Open.
+
+8. Click ``IMPORT``.
+
+   ```NOTE:```This process takes several minutes. It must finish before you can continue. You can
    monitor its progress in the Recent Tasks pane in the vSphere Client.
 
 ### Task 3: Add the Content Library to the Namespace
@@ -51,31 +67,45 @@ You add the content library to the VM Service on the Namespace.
 
 1. In the vSphere Client, select Supervisor Management from the main menu in the top-left
    corner.
+
 2. Click the Namespaces tab and select namespace-01 in the left navigation pane.
+
 3. Click the Summary tab.
+
 4. In the VM Service pane, click ADD CONTENT LIBRARY.
+
 5. In the Add Content Library dialog box, select the cl_vm and Kubernetes Service
    Content Library checkbox and click OK.
    The VM Service pane now appears above Associated Content Libraries.
+
 6. Click the Terminal icon from the taskbar to open the command line.
+
 7. In Terminal, validate that the virtual machine image is available in the vSphere
    Namespace.
+
    a. List the VCF contexts.
 
-vcf context list
-b. Switch to the Supervisor context.
-vcf context use context01
-c. List the virtual machine images in the namespace.
-kubectl get virtualmachineImages -n namespace-01 | grep
-ubuntu-2204-amd64-v1.31.7
-d. Record the vmi ID of the Ubuntu 22.04 virtual machine image to be used in the next
-lab task to update the ubuntu VM deployment YAML file. ****\_\_****
-e. List the VM classes that are available in the namespace.
-kubectl get virtualmachineclass -n namespace-01
-The VM class 'best-effort-large' appears in the command output.
-f. List the storage classes that are available in the namespace.
-kubectl get storageclass -n namespace-01 | grep
-supervisor-storage-policy
+   ```vcf context list```
+
+   b. Switch to the Supervisor context.
+
+   ```vcf context use context01```
+
+   c. List the virtual machine images in the namespace.
+
+   ```kubectl get virtualmachineImages -n namespace-01 | grep ubuntu-2204-amd64-v1.31.7```
+
+   d. Record the vmi ID of the Ubuntu 22.04 virtual machine image to be used in the next lab task to update the ubuntu VM deployment YAML file. 
+
+   e. List the VM classes that are available in the namespace.
+
+   ```kubectl get virtualmachineclass -n namespace-01```
+
+   The VM class 'best-effort-large' appears in the command output.
+
+   f. List the storage classes that are available in the namespace.
+
+   ```kubectl get storageclass -n namespace-01 | grep supervisor-storage-policy```
 
 ### Task 4: Deploy a VM
 
@@ -142,7 +172,7 @@ You use the VM Service to deploy a VM.
 
     ```kubectl apply -f /home/student01/Downloads/YAML-files/cloudinit-config.yaml```
 
-    ```configmap/ubuntu-config created``` message appears. 
+   configmap/ubuntu-config created message appears. 
 
 6. Deploy the VM.
 
