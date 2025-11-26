@@ -8,27 +8,27 @@ Create a load balancer in learning_org:
 2. Deploy a Load Balancer
 
 3. Test the Connectivity
-Task 1: (Optional) Log In to the VCF Automation Organization
+
+## Task 1: (Optional) Log In to the VCF Automation Organization
 Portal
 You log in to the VCF Automation Organization Portal.
 
 1. On the Google Chrome bookmarks bar, right-click VCF Automation and select Open in
 new incognito window.
 
-a. If the Your connection is not private message appears, click Advanced
-and click Proceed to sa-vaa01.vcf.sddc.local(unsafe).
+    a. If the Your connection is not private message appears, click Advanced and click Proceed to ```sa-vaa01.vcf.sddc.local(unsafe).```
 
-b. Under Organization name, enter learning_org
+    b. Under Organization name, enter learning_org
 
-c. Log in to the VCF Automation Organization Portal.
+    c. Log in to the VCF Automation Organization Portal.
 
-* From the first drop-down menu, select Log in with local account.
+    * From the first drop-down menu, select Log in with local account.
 
-* ***User name:*** ```student1```
+    * ***User name:*** ```student1```
 
-* **Password:** ```VMware123!VMware123!```
+    * **Password:** ```VMware123!VMware123!```
 
-d. Leave the VCF Automation Organization Portal open for the next task.
+    d. Leave the VCF Automation Organization Portal open for the next task.
 
 ## Task 2: Deploy a Load Balancer
 
